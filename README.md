@@ -1,6 +1,6 @@
 # Technical Debt Management
 
-
+## Q&A
 
 **1. Why is the problem relevant?**
 
@@ -10,7 +10,7 @@ In the beginning of each sprint of an agile software development process, the or
 
 **2. Who will benefit from addressing the problem?**
 
-Product Owner, Developer ...
+Product Owner, Project Manager, Developer ...
 
 
 
@@ -34,78 +34,77 @@ The proposed algorithm ACO can achieve high performance as the GA approach in th
 
 
 
-### Formulation of the problem
+## Formulation of the problem
 
-**Implementation Cost**
+### Implementation Cost
+
 $$
 I C(S)=\sum_{i \in F S} c_{i}+\sum_{j \in T D} p_{j}+\sum_{i \in F S} \sum_{k \notin T D} x c_{i k}
 $$
 
-​		*S: Current Sprint*
+​*S: Current Sprint*
 
-​		*FS: Selected Features*
+​*FS: Selected Features*
 
-​		*TD: Selected Technical Debt*
+​*TD: Selected Technical Debt*
 
-​		c_i: Feature cost
+​c_i: Feature cost
 
-​		p_j: Technical Debt pay back cost
+​p_j: Technical Debt pay back cost
 
-​		xc_ik: extra cost of Feature i blocked by not selected Debt k
+​xc_ik: extra cost of Feature i blocked by not selected Debt k
 
 
 
-**Short Term Value**
+### Short Term Value
+
 $$
 S T V(S)=\sum_{i \in F S} v_{i}
 $$
 
-​		v_i: bussiness value of Feature i
+​v_i: bussiness value of Feature i
 
 
 
-**Future Investment Value**
+### Future Investment Value
+
 $$
 F I V(S)=\sum_{j \in T D} f c_{j}+\sum_{i \notin F S} \sum_{j \in T D} x c_{i j}
 $$
 
-​		fc_i: future cost of Debt, if it is selected, these is no future cost
+​fc_i: future cost of Debt, if it is selected, these is no future cost
 
 
 
-### GA Approach
+## GA Approach
 
-- Problem representation
+### Problem representation
 
-​		[ 0 1 0 1 0 0 1 0 0 1 ... ]
+```
+[ 0 1 0 1 0 0 1 0 0 1 ... ]
+```
 
-- Implementation Cost Control
+### Implementation Cost Control
 
-​		If ic > max_ic, set one gene 1 to 0
+If ic > max_ic, set one gene 1 to 0
 
 
 
-### Limitation
+## Limitation
 
 - Assumes every task is independent, ignores the relation of different tasks
 
-​	\ Epic 1
-
-​			\ Feature 1
-
-​			\ Feature 2
-
-​			\ Feature 3
-
-​			\ Debt 1
-
-​	\ Epic 2
-
-​			...
-
-​	\ Epic 3
-
-​			...
+```
+| Epic 1
+​   \ Feature 1
+   \ Feature 2
+   \ Feature 3
+   \ Debt 1
+| Epic 2
+   ...
+| Epic 3
+   ...
+```
 
 - A lot of unmeaningful individuals kept in the population
 
@@ -117,9 +116,9 @@ $$
 
 
 
-### ACO Approach
+## ACO Approach
 
-- Problem representation
+### Problem representation
 
 ​		5
 
@@ -127,10 +126,12 @@ $$
 
 ​		5 -> 3 -> 7 ...
 
-​		Probability[^2]
+### Probability[^2]
+
 $$
 p_{x y}^{k}=\frac{\left(\tau_{x y}^{\alpha}\right)\left(\eta_{x y}^{\beta}\right)}{\sum_{z \in \operatorname{allowed}_{x}}\left(\tau_{x z}^{\alpha}\right)\left(\eta_{x z}^{\beta}\right)}
 $$
+
 ​		*Ant from x to y*
 
 ​		*tau_xy: the amount of pheromone from x to y*
@@ -139,17 +140,18 @@ $$
 
 ​		If x and y are related, eta can be higher
 
-- Implementation Cost Control
+### Implementation Cost Control
 
   5 -> 3 -> 7 ... stops when ic > max_ic
 
 
 
-### Evaluation
+## Evaluation
 
-**Entropy**[^3]
+### Entropy[^3]
 
-Entropy is a measure of the randomness or disorder in a system
+Entropy is a measure of the randomness or disorder in a 
+
 $$
 \mathrm{H}(X)=-\sum_{x \in \mathcal{X}} p(x) \log _{b} p(x)
 $$
@@ -162,13 +164,12 @@ $$
 
 
 
-**Validatation Data**
+### Validatation Data
 
-​		SEM Incident Response
+​		SEM Incident Response Project
 
 
-
-**Comparison**
+### Comparison
 
 |     | Random | GA                                    | ACO  |
 |-----| ------ | ------------------------------------- | ---- |
@@ -181,6 +182,8 @@ $$
 
 ### Reference
 
-[^1]: S. H. Vathsavayi and K. Systä, "Technical Debt Management with Genetic Algorithms," 2016 42th Euromicro Conference on Software Engineering and Advanced Applications (SEAA), Limassol, Cyprus, 2016, pp. 50-53, doi: 10.1109/SEAA.2016.43. https://ieeexplore.ieee.org/document/7592775
+[^1]: S. H. Vathsavayi and K. Systä, "Technical Debt Management with Genetic Algorithms," 2016 42th Euromicro Conference on Software Engineering and Advanced Applications (SEAA), Limassol, Cyprus, 2016, pp. 50-53, doi: 10.1109/SEAA.2016.43. https://ieeexplore.ieee.org/document/
+
 [^2]: https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms
+
 [^3]: https://en.wikipedia.org/wiki/Entropy_(information_theory)
