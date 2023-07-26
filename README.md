@@ -90,7 +90,7 @@ If ic > max_ic, set one gene 1 to 0
 
 
 
-## Limitation
+### Limitation
 
 - Assumes every task is independent, ignores the relation of different tasks
 
@@ -120,16 +120,20 @@ If ic > max_ic, set one gene 1 to 0
 
 ### Problem representation
 
-​		5
+```
+5
+5 -> 3
+​5 -> 3 -> 7 ...
+```
 
-​		5 -> 3
-
-​		5 -> 3 -> 7 ...
 
 ### Probability[^2]
 
+
 $$
+
 p_{x y}^{k}=\frac{\left(\tau_{x y}^{\alpha}\right)\left(\eta_{x y}^{\beta}\right)}{\sum_{z \in \operatorname{allowed}_{x}}\left(\tau_{x z}^{\alpha}\right)\left(\eta_{x z}^{\beta}\right)}
+
 $$
 
 ​		*Ant from x to y*
