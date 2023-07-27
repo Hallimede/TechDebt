@@ -42,17 +42,19 @@ $$
 I C(S)=\sum_{i \in F S} c_{i}+\sum_{j \in T D} p_{j}+\sum_{i \in F S} \sum_{k \notin T D} x c_{i k}
 $$
 
-​*S: Current Sprint*
 
-​*FS: Selected Features*
+&nbsp;&nbsp;&nbsp;&nbsp;*​$S$: Current Sprint*
 
-​*TD: Selected Technical Debt*
+​&nbsp;&nbsp;&nbsp;&nbsp;*$FS$: Selected Features*
 
-​c_i: Feature cost
+​&nbsp;&nbsp;&nbsp;&nbsp;*$TD$: Selected Technical Debt*
 
-​p_j: Technical Debt pay back cost
+&nbsp;&nbsp;&nbsp;&nbsp;*$​c_i$: Feature cost*
 
-​xc_ik: extra cost of Feature i blocked by not selected Debt k
+​&nbsp;&nbsp;&nbsp;&nbsp;*$p_j$: Technical Debt pay back cost*
+
+&nbsp;&nbsp;&nbsp;&nbsp;*$​xc_{ik}$: extra cost of Feature $i$ blocked by not selected Debt $k$*
+
 
 
 
@@ -62,7 +64,7 @@ $$
 S T V(S)=\sum_{i \in F S} v_{i}
 $$
 
-​v_i: bussiness value of Feature i
+​&nbsp;&nbsp;&nbsp;&nbsp;*$v_i$: bussiness value of Feature $i$*
 
 
 
@@ -72,7 +74,7 @@ $$
 F I V(S)=\sum_{j \in T D} f c_{j}+\sum_{i \notin F S} \sum_{j \in T D} x c_{i j}
 $$
 
-​fc_i: future cost of Debt, if it is selected, these is no future cost
+​&nbsp;&nbsp;&nbsp;&nbsp;*$fc_i$: future cost of Debt. If the feature is selected, these is no future cost*
 
 
 
@@ -86,7 +88,7 @@ $$
 
 ### Implementation Cost Control
 
-If ic > max_ic, set one gene 1 to 0
+If $IC$ > $MAX\_IC$, set one gene 1 to 0
 
 
 
@@ -108,9 +110,9 @@ If ic > max_ic, set one gene 1 to 0
 
 - A lot of unmeaningful individuals kept in the population
 
-  Desired: [ 0 1 0 1 0 0 1 0 0 1 ]
+    Desired: [ 0 1 0 1 0 0 1 0 0 1 ]
 
-  Cases:    [ 0 0 0 1 0 0 0 0 0 0 ]    low fitness
+    Cases:    [ 0 0 0 1 0 0 0 0 0 0 ]    low fitness
 
   ​                [ 1 1 1 1 1 0 1 1 1 1 ]   high fitness, beyond ic limit
 
@@ -131,22 +133,22 @@ If ic > max_ic, set one gene 1 to 0
 
 
 $$
-
 p_{x y}^{k}=\frac{\left(\tau_{x y}^{\alpha}\right)\left(\eta_{x y}^{\beta}\right)}{\sum_{z \in \operatorname{allowed}_{x}}\left(\tau_{x z}^{\alpha}\right)\left(\eta_{x z}^{\beta}\right)}
-
 $$
 
-​		*Ant from x to y*
+*Ant from x to y*
+​
 
-​		*tau_xy: the amount of pheromone from x to y*
+&nbsp;&nbsp;&nbsp;&nbsp;*$tau_{xy}$: the amount of pheromone from $x$ to $y$*
 
-​		*eta_xy: the desirability of state transition, priori knowledge*
 
-​		If x and y are related, eta can be higher
+&nbsp;&nbsp;&nbsp;&nbsp;*$\eta_{xy}$: the desirability of state transition, priori knowledge*
+
+​		If $x$ and $y4 are related, eta can be higher
 
 ### Implementation Cost Control
 
-  5 -> 3 -> 7 ... stops when ic > max_ic
+  5 -> 3 -> 7 ... stops when $IC$ > $MAX\_IC$
 
 
 
