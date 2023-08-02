@@ -1,10 +1,12 @@
 # Technical Debt Management
 
+Technical debt management in software development based on search based algorithm
+
 ## Q&A
 
 **1. Why is the problem relevant?**
 
-In the beginning of each sprint of an agile software development process, the organization needs to select the tasks (new features in different epics and technical debt pay back) that can be implementable by the available resources to maximize the beneﬁt. 
+At the beginning of each sprint of an agile software development process, the organization needs to select the tasks (new features in different epics and technical debt pay back) that can be implementable by the available resources to maximize the beneﬁt. 
 
 
 

@@ -65,7 +65,6 @@ class Population:
 
         return self.population[i_partner_a], self.population[i_partner_b]
 
-    # Evaluate the population
     def evaluate(self):
         for ind in self.population:
             if ind.is_greater(self.best_individual):
